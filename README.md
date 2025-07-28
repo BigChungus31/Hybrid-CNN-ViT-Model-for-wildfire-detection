@@ -1,1 +1,0 @@
-# Hybrid-CNN-ViT-Model-for-wildfire-detection-as-a-proxy-for-stubble-burning
