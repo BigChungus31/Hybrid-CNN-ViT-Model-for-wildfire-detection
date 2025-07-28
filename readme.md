@@ -15,6 +15,42 @@ A modular implementation of a hybrid CNN-Vision Transformer model for satellite 
 ├── requirements.txt     # Python dependencies
 └── README.md           # This file
 ```
+## Dataset
+
+This project uses the [Wildfire Prediction Dataset (Satellite Images)](https://www.kaggle.com/datasets/abdelghaniaaba/wildfire-prediction-dataset) from Kaggle.
+
+Due to licensing restrictions, the dataset is not included in this repository.
+
+**To use this project:**
+1. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/abdelghaniaaba/wildfire-prediction-dataset).
+
+## About the Dataset
+
+The dataset used in this project was sourced from Canada’s Open Government Portal and is licensed under the Creative Commons 4.0 Attribution (CC BY) license by Quebec. It comprises 42,750 satellite images (350×350 px), divided into:
+
+22,710 wildfire images (53.1%)
+
+20,040 no-wildfire images (46.9%)
+
+Images were collected using Mapbox API based on GPS coordinates of wildfire events (>0.01 acres burned) from the Canadian Wildfire Database. This ensures a rich, varied dataset for deep learning, with images captured across different seasons and environmental conditions.
+
+The data was split as follows:
+
+70% Training (29,925 images)
+
+15% Validation (6,413 images)
+
+15% Testing (6,412 images)
+
+This structure supports robust training, hyperparameter tuning, and evaluation for wildfire risk prediction using satellite imagery.
+
+## Sample Images from the Dataset
+
+![No Wildfire image](https://github.com/user-attachments/assets/62ceedd2-8335-4466-91e2-433cf90b80af)  
+*No Wildfire Image*
+
+![Wildfire image](https://github.com/user-attachments/assets/85322fc2-7d8a-4522-a261-3db26488c76a)  
+*Wildfire Image*
 
 ## Features
 
@@ -142,6 +178,37 @@ The modular structure makes it easy to:
 - Add new evaluation metrics in `evaluation.py`
 - Create custom visualizations in `visualization.py`
 
+## Output
+
+Confusion Matrices
+
+<img width="1000" height="800" alt="test_confusion_matrix" src="https://github.com/user-attachments/assets/719e2e6d-d43e-4bea-ad93-9afdfa0edea2" />  
+
+<img width="1000" height="800" alt="validation_confusion_matrix" src="https://github.com/user-attachments/assets/d90ac589-4006-427a-ba23-5e0da03cb441" /> 
+
+Test Metrics
+
+| Class        | Precision | Recall | F1-Score   | Support |
+| ------------ | --------- | ------ | ---------- | ------- |
+| nowildfire   | 0.9894    | 0.9957 | 0.9926     | 2820    |
+| wildfire     | 0.9965    | 0.9914 | 0.9939     | 3480    |
+| **Accuracy** |           |        | **0.9933** | 6300    |
+| Macro Avg    | 0.9930    | 0.9936 | 0.9933     | 6300    |
+| Weighted Avg | 0.9934    | 0.9933 | 0.9933     | 6300    |
+
+Validation Metrics
+
+| Class        | Precision | Recall | F1-Score   | Support |
+| ------------ | --------- | ------ | ---------- | ------- |
+| nowildfire   | 0.9887    | 0.9943 | 0.9915     | 2820    |
+| wildfire     | 0.9954    | 0.9908 | 0.9931     | 3480    |
+| **Accuracy** |           |        | **0.9924** | 6300    |
+| Macro Avg    | 0.9920    | 0.9926 | 0.9923     | 6300    |
+| Weighted Avg | 0.9924    | 0.9924 | 0.9924     | 6300    |
+
+
+
+
 ## Common Issues
 
 ### CUDA Out of Memory
@@ -155,6 +222,12 @@ The modular structure makes it easy to:
 ### Import Errors
 - Ensure all dependencies are installed: `pip install -r requirements.txt`
 - Check Python version compatibility (3.7+)
+
+## License
+This project is licensed under the MIT License.
+You are free to use, modify, and distribute this code for personal or commercial purposes, provided that proper credit is given.
+
+See the LICENSE file for more details.
 
 ## Citation
 
