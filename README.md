@@ -2,6 +2,12 @@
 
 A modular implementation of a hybrid CNN-Vision Transformer model for satellite image classification, combining the strengths of ResNet50 and Vision Transformer architectures.
 
+## Application Context
+
+While this model is trained on wildfire satellite data, its intended application is the detection and mapping of **stubble burning events** using satellite imagery. Due to limited open-source datasets specific to crop residue fires, wildfire data serves as a suitable proxy for model development and experimentation.
+
+This approach can assist in identifying stubble burning hotspots, supporting air quality management and climate policy research.
+
 ## Project Structure
 
 ```
