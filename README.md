@@ -224,8 +224,7 @@ Validation Metrics
 - Check Python version compatibility (3.7+)
 
 ## License
-This project is licensed under the MIT License.
-You are free to use, modify, and distribute this code for personal or commercial purposes, provided that proper credit is given.
+This project is licensed under the [Apache 2.0 License](./LICENSE).
 
 See the LICENSE file for more details.
 
